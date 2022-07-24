@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: "CB";
+    src: url(./src/fonts/CB.otf);
+  }
+  
+  @layer base {
+    html,
+    body {
+      @apply w-full h-full antialiased p-0 m-0;
+    }
+  }
+  
