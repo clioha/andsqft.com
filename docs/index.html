@@ -1,14 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <title>Basic HTML/Tailwind starter</title>
-    <meta name="description" content="Basic HTML/Tailwind starter" />
+    <title>&SQFR Real Estate</title>
+    <meta name="description" content="&SQFR Real Estate" />
     <meta name="author" content="Daily Dev Tips" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="styles.css" />
+    <script src="//unpkg.com/alpinejs" defer></script>
+
   </head>
   <body>
-    <div class="w-screen h-screen bg-daily-dev-tips flex items-center justify-center">Welcome brother to your future</div>
-  </body>
+    
+    <div x-data="{activeTab: 0}" class="antialiased w-[100vw] h-full m-0 p-6 grid grid-cols-4 justify-start">
+
+      <div class="col-start-1 col-span-1">
+        <img class="w-3/4" src="./src/logo/logo.svg" alt="">
+      </div>
+      
+      <div class="col-start-3 col-span-2 text-lg cursor-pointer">
+        <div @click="activeTab = 0" class="hover:text-zinc-300"> About</div>
+        <div @click="activeTab = 1" class="hover:text-zinc-300"> Services</div>
+        <div @click="activeTab = 2" class="hover:text-zinc-300"> Contact</div>
+      </div>
+
+      <div class="col-start-3 col-span-2 font-sans text-lg leading-normal">
+        <div x-show="activeTab === 0" :class="{'active': activeTab === 0}">
+          &SQFT Real Estate is a boutique real estate consultancy offering a plethora of bespoke services, guidance and strategic advice on the whole lifecycle of property investment and development projects.<br> 
+          <br>We represent real estate funds, family offices, private individuals, investors, developers, international buyers/sellers and tenants. <br>
+          <br>We support our clients with deal origination, due diligence process, market research, feasibility studies, financial appraisals & cashflow modelling. <br>
+          <br>We guide our clients through their decision-making process and optimising their risk adjusted-returns, maximising their financial gain and achieving their desired goals.
+        </div>
+        
+        <div x-show="activeTab === 1" :class="{'active': activeTab === 1}">
+          <div>ORIGINATION & ACQUISITION</div>
+            <div>Leveraging multiple sources to locate, filter, identify and originate the best on and off-market opportunities according to client’s criteria & risk-return profile.</div> 
+          <div class="pt-6">MARKET RESEARCH & INSIGHTS</div>
+            <div>In-depth market research, analysis and market studies to identify risks and trends.</div> 
+          <div class="pt-6">FINANCIAL INVESTMENT ANALYSIS</div>
+            <div>Financial investment analysis, feasibility studies, cashflow appraisals, sensitivity tests and partnership distribution waterfalls.</div>
+          <div class="pt-6">EVALUATION & DECISION-MAKING</div>
+            <div>Evaluation of the results and provision of the estimated risk, the potential returns on investment, the project viability and provision of on-going advisory on the overall decision-making process.</div>
+          <div class="pt-6">STRATEGIES</div>
+            <div>Advising on building real estate investment or development strategies including the geographical, sectoral and strategic portfolio allocation and positioning.</div>
+          <div class="pt-6">FINANCING [EQUITY & DEBT]</div>
+            <div>Guidance in fund raising [equity & debt] and introduction to the appropriate trusted partners or contacts. Underwriting the business plan (inc. fee and carry calculations) and preparation of relevant documentation and reports.</div>
+          <div class="pt-6">REPORTING & PRESENTING</div>
+            <div>Preparation of presentations, memos and reports for internal and external parties (inc. board presentations, investment committee memos, or finance reports).</div>
+        </div>
+
+        <div x-show="activeTab === 2" :class="{'active': activeTab === 2}">
+          <div>
+            <form action="mailto:info@sqft.com" method="post" enctype="text/plain" class="w-3/4">
+              Name<br>
+              <input type="text" name="name" size="75" class="bg-zinc-100 w-full"><br>
+              E-mail<br>
+              <input type="text" name="mail" class="bg-zinc-100 w-full"><br>
+              Message<br>
+              <input type="text" name="comment" class="bg-zinc-100 w-full h-40"><br><br>
+              <input type="submit" value="Send" class="bg-black text-white w-full px-2 py-1">
+            </form>
+
+            <div class="bottom-0 w-full fixed mt-6 py-6 grid grid-cols-4 gap-4 text-sm">
+                <div class="col-start-1"> REAL ESTATE LIMITED</div>
+                <div class="col-start-2"> info@andsqft.com <br>www.andsqft.com</div>
+                <div class="col-start-3"> +44 (0) 7594529265 <br> +357 99636601</div>
+                <div class="col-start-4"> @andsqft<br>@andsqft</div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+
+    </div>
+    
+</body>
 </html>
